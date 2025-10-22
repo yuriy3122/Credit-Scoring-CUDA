@@ -15,11 +15,7 @@ It is a **pure C++/CUDA** implementation — no Python or PyTorch required — f
 5. [Build Instructions](#build-instructions)  
 6. [Running the Model](#running-the-model)  
 7. [Command-Line Arguments](#command-line-arguments)  
-8. [Output Example](#output-example)  
-9. [Performance & Extensions](#performance--extensions)  
-10. [Troubleshooting](#troubleshooting)  
-11. [License](#license)
-
+8. [Output Example](#output-example)
 ---
 
 ## 🧾 Overview
