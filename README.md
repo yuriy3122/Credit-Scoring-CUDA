@@ -58,7 +58,7 @@ Default expectations (override via CLI):
 
 ```
                ┌───────────────────────────────────────────────┐
-               │                 Input Features                 │
+               │                 Input Features                │
                │      x ∈ ℝ^D  (scaled with Min‑Max)           │
                └───────────────┬───────────────────────────────┘
                                │
