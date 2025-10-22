@@ -1,4 +1,4 @@
-# 🧠 CUDA MLP Binary Classifier for Mortgage Creditworthiness
+# CUDA MLP Binary Classifier for Mortgage Creditworthiness
 
 This project implements a **CUDA-accelerated Multilayer Perceptron (MLP)** for **binary classification**, designed to estimate the **creditworthiness of loan applicants** using historical HMDA-like datasets and macroeconomic indicators.
 
