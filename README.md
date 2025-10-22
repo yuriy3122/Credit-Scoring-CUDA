@@ -81,24 +81,6 @@ Default expectations (override via CLI):
                     (threshold at ŷ ≥ 0.5 → 1)
 ```
 
-### Mermaid Diagram (renders on GitHub)
-
-```mermaid
-flowchart TD
-  X[Input x ∈ ℝ^D<br/>(Min‑Max scaled)] --> L1[Linear: Z₁ = W₁·x + b₁]
-  L1 --> A1[ReLU: A₁ = max(0,Z₁)]
-  A1 --> L2[Linear: z₂ = W₂·A₁ + b₂]
-  L2 --> S[Sigma: ŷ = σ(z₂)]
-  S --> P{ŷ ≥ 0.5?}
-  P -- Yes --> Y1[Class 1 (creditworthy)]
-  P -- No  --> Y0[Class 0]
-```
-
-**Loss:** Binary Cross‑Entropy (with Sigmoid)  
-**Optimizer:** SGD
-
----
-
 ## ⚙️ Implementation Details
 
 All computations are implemented with **custom CUDA kernels**:
@@ -173,32 +155,3 @@ After training, the model performs inference on the test split and prints:
 ```
 Test accuracy: 0.8653
 ```
-
-Optional extensions: precision/recall/F1, ROC‑AUC, confusion matrix, and saving predictions to CSV.
-
----
-
-## ⚡ Performance & Extensions
-
-- Replace `matmul` with **cuBLAS** for higher throughput.  
-- Add **mini‑batching** and **Adam** optimizer.  
-- Add **GPU inference** for validation (mirroring training forward pass).  
-- Integrate **metrics** and **plots** as needed for research workflows.
-
----
-
-## 🧩 Troubleshooting
-
-| Issue | Possible cause | Fix |
-|------|-----------------|-----|
-| `Cannot open CSV` | Wrong `--csv` path | Use absolute/valid path |
-| `Target column not found` | Different column name | Use `--target your_column` |
-| `No numeric feature columns detected` | Non‑numeric/missing values | Increase `--features` or clean dataset |
-| CUDA error: invalid device | No GPU or mismatched toolkit | Check `nvcc --version` and GPU drivers |
-| Very low accuracy | Data imbalance or wrong label mapping | Verify positive class mapping |
-
----
-
-## 📄 License
-
-MIT License © 2025 Yuriy Doroshenko
